@@ -41,9 +41,14 @@ Joe.add_exercises(Brian, [exercise1, exercise2])
 # Chapt 14 challenge
 
 
-def newStr(student):
-    for exercise in Ashley.exercises:
-        print(f"{student.first_name} is working on {exercise.name} ")
+def challenge_str(student):
+    # for exercise in student.exercises:
+
+    print(
+        f"{student.first_name} is working on {student.exercises[0].name} and {student.exercises[1].name}")
 
 
-newStr(Eve)
+challenge_str(Eve)
+challenge_str(Jimmy)
+challenge_str(Ashley)
+challenge_str(Brian)
