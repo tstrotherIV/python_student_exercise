@@ -231,7 +231,12 @@ VALUES
     (7, 3);
 
 
-select i.name as 'Instructor Name', c.name as 'Cohort'
-from instructors i
-    join cohort c on i.cohort_id = c.Id
-order by i.cohort_id
+select
+    e.Id ExerciseId,
+    e.name,
+    s.Id,
+    s.first_name,
+    s.last_name
+from exercise e
+    join student_exercise se on se.exercise_id = e.Id
+    join students s on s.Id = se.student_id
