@@ -44,7 +44,8 @@ CREATE TABLE "exercise"
 (
     "Id" INTEGER NOT NULL PRIMARY KEY,
     "name" TEXT NOT NULL,
-    "language" TEXT NOT NULL
+    "language" TEXT NOT NULL,
+    "instructor_assigned" INTEGER NOT NULL
 );
 
 CREATE TABLE "student_exercise" (
@@ -79,29 +80,29 @@ VALUES
 -- 5 exercises
 
 INSERT INTO exercise
-    (Name, Language)
+    (Name, Language, instructor_assigned)
 VALUES
-    ('Kandy Korner', 'React');
+    ('Kandy Korner', 'React', 1);
 
 INSERT INTO exercise
-    (Name, Language)
+    (Name, Language, instructor_assigned)
 VALUES
-    ('Nutshell', 'JavaScript');
+    ('Nutshell', 'JavaScript', 2);
 
 INSERT INTO exercise
-    (Name, Language)
+    (Name, Language, instructor_assigned)
 VALUES
-    ('Arberoteum', 'Python');
+    ('Arberoteum', 'Python', 3);
 
 INSERT INTO exercise
-    (Name, Language)
+    (Name, Language, instructor_assigned)
 VALUES
-    ('MyListing360', 'React');
+    ('MyListing360', 'React', 1);
 
 INSERT INTO exercise
-    (Name, Language)
+    (Name, Language, instructor_assigned)
 VALUES
-    ('Daily Journal', 'JavaScript');
+    ('Daily Journal', 'JavaScript', 2);
 
 
 -- 3 instructors
@@ -231,9 +232,10 @@ VALUES
     (7, 3);
 
 
+
 select
     e.Id ExerciseId,
-    e.name,
+    e.name ExerciseName,
     s.Id,
     s.first_name,
     s.last_name
